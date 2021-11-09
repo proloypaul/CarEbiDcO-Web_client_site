@@ -1,10 +1,11 @@
+import { Container } from '@mui/material';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
     return (
-        <div>
+        <Container>
             <nav className="navBar">
                 <div className="navLogo">
 
@@ -12,9 +13,10 @@ const Header = () => {
                 <div className="navSection">
                     <NavLink to="/home">Home</NavLink>
                     <NavLink to="/Products">Products</NavLink>
+                    <NavLink to="/reviews">Reviews</NavLink>
                 </div>
             </nav>
-        </div>
+        </Container>
     );
 };
 
