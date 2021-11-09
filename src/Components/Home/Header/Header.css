@@ -1,0 +1,9 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+
+}
+.navSection a{
+    text-decoration: none;
+    margin-right: 10px; 
+}
