@@ -5,7 +5,7 @@ import bannerThree from '../../../images/banner-three.jpg';
 import './Banner.css';
 
 const imgStyle = {
-    width: "400px",
+    width: "300px",
     height: "250px",
     border:0,
     borderRadius: "10px"
@@ -13,7 +13,7 @@ const imgStyle = {
 const Banner = () => {
     return (
         <div className="banner-container">
-            <h1>Banner section</h1>
+            <h1 sx={{color: 'white', textAlign: 'center'}}>The Wind is not even close to us</h1>
             <Container>
                 <h1>Banner title </h1>
                 <Grid container spacing={2} sx={{textAlign: "center"}}>
