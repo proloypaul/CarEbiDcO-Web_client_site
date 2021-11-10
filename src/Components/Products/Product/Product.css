@@ -1,0 +1,17 @@
+.product{
+    text-align: center;
+}
+.product .product-title{
+    background-color: black;
+    color: white;
+    font-weight: 300;
+    border-radius: 5px;
+}
+.productBtn{
+    background: black;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-weight: bold;
+}
