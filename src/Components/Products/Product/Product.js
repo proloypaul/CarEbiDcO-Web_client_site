@@ -1,5 +1,5 @@
-import { borderRadius } from '@mui/system';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Product.css'; 
 
 const productImg = {
@@ -10,13 +10,13 @@ const productImg = {
     
 }
 const Product = (props) => {
-    const {Model, brand, img, description} = props.product 
+    const {Model, brand, img, _id} = props.product 
     return (
         <div className="product">
             <h3 className="product-title">{Model}, {brand}</h3>
             <img src={img} alt="Empty!" style={productImg}/>
             <div>
-                <button className="productBtn">Book Now</button>
+                <Link to={`/product/${_id}`}><button className="productBtn">Book Now</button></Link>
             </div>
         </div>
     );

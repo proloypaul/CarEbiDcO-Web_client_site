@@ -16,8 +16,9 @@ const Products = () => {
     }, [])
     return (
         <div>
-            <h1>Products section</h1>
-            <Container>
+            
+            <Container sx={{my:10}}>
+                <h1>Products section</h1>
                 <Grid container spacing={2}>
                     {products.map(product => <Grid  key={product._id} item xs={12} md={4}>
                         <Product product={product}></Product>

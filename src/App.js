@@ -10,6 +10,7 @@ import Footer from './Components/Home/Footer/Footer';
 import Products from './Components/Products/Products';
 import Reviews from './Components/Home/Reviews/Reviews';
 import NotFind from './Components/NotFind/NotFind';
+import ProductOrder from './Components/Products/ProductOrder/ProductOrder';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
        </Route>
        <Route path="/reviews">
          <Reviews></Reviews>
+       </Route>
+       <Route path="/product/:productId">
+         <ProductOrder></ProductOrder>
        </Route>
        <Route path="*">
          <NotFind></NotFind>
