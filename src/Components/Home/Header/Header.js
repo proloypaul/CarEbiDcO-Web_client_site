@@ -1,9 +1,11 @@
 import { Container } from '@mui/material';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link} from 'react-router-dom';
+import UseFirebase from '../../../Hooks/UseFirebase';
 import './Header.css';
 
 const Header = () => {
+    const {user, signOutProcess} = UseFirebase()
     return (
         <Container>
             <nav className="navBar">
@@ -11,9 +13,10 @@ const Header = () => {
 
                 </div>
                 <div className="navSection">
-                    <NavLink to="/home">Home</NavLink>
-                    <NavLink to="/Products">Products</NavLink>
-                    <NavLink to="/reviews">Reviews</NavLink>
+                    <Link to="/home">Home</Link>
+                    <Link to="/Products">Products</Link>
+                    <Link to="/reviews">Reviews</Link>
+                    {user?.email ? <button onClick={signOutProcess}>LogOut</button> : <Link to="/login"><button>LogIn</button></Link>}
                 </div>
             </nav>
         </Container>

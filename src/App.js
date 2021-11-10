@@ -11,6 +11,7 @@ import Products from './Components/Products/Products';
 import Reviews from './Components/Home/Reviews/Reviews';
 import NotFind from './Components/NotFind/NotFind';
 import ProductOrder from './Components/Products/ProductOrder/ProductOrder';
+import Login from './Components/Login/Login';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
        </Route>
        <Route path="/product/:productId">
          <ProductOrder></ProductOrder>
+       </Route>
+       <Route path="/login">
+         <Login></Login>
        </Route>
        <Route path="*">
          <NotFind></NotFind>
