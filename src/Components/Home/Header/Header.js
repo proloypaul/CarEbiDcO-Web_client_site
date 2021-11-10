@@ -1,11 +1,11 @@
 import { Container } from '@mui/material';
 import React from 'react';
 import { Link} from 'react-router-dom';
-import UseFirebase from '../../../Hooks/UseFirebase';
+import useAuth from '../../../Context/useAuth';
 import './Header.css';
 
 const Header = () => {
-    const {user, signOutProcess} = UseFirebase()
+    const {user, signOutProcess} = useAuth()
     return (
         <Container>
             <nav className="navBar">

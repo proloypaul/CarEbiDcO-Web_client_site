@@ -1,11 +1,11 @@
 import { Container, Grid, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import UseFirebase from '../../Hooks/UseFirebase';
+import useAuth from '../../Context/useAuth';
 import loginImg from '../../images/loginImg.png'
 
 const Login = () => {
-    const {signInUsingGoogle, loginWithEmailAndPassword, error} = UseFirebase()
+    const {signInUsingGoogle, loginWithEmailAndPassword, error} = useAuth()
     const [logerData, setLogerData] = useState({})
     const history = useHistory()
     const location = useLocation()
@@ -30,7 +30,7 @@ const Login = () => {
                     <form onSubmit={handleLogIn}>
                     <TextField
                     id="outlined-password-input"
-                    label="Enter Your Password"
+                    label="Enter Your Email"
                     type="email"
                     name="email"
                     onBlur={handleBlur}

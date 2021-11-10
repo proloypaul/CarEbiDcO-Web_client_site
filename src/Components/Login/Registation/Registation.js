@@ -1,11 +1,11 @@
 import { Container, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import UseFirebase from '../../../Hooks/UseFirebase';
+import useAuth from '../../../Context/useAuth';
 import './Registation.css';
 
 const Registation = () => {
-    const {registerWithEmailAndPassword, error} = UseFirebase()
+    const {registerWithEmailAndPassword, error} = useAuth()
     const [registerData, setRegisterData] = useState({})
     const history = useHistory()
 

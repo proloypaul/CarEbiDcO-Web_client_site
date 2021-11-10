@@ -13,39 +13,44 @@ import NotFind from './Components/NotFind/NotFind';
 import ProductOrder from './Components/Products/ProductOrder/ProductOrder';
 import Login from './Components/Login/Login';
 import Registation from './Components/Login/Registation/Registation';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
   return (
-   <Router>
-     <Header></Header>
-     <Switch>
-       <Route exact path="/">
+   <div>
+     <AuthProvider>
+      <Router>
+      <Header></Header>
+      <Switch>
+        <Route exact path="/">
+            <Home></Home>
+        </Route>
+        <Route path="/home">
           <Home></Home>
-       </Route>
-       <Route path="/home">
-         <Home></Home>
-       </Route>
-       <Route path="/products">
-         <Products></Products>
-       </Route>
-       <Route path="/reviews">
-         <Reviews></Reviews>
-       </Route>
-       <Route path="/product/:productId">
-         <ProductOrder></ProductOrder>
-       </Route>
-       <Route path="/login">
-         <Login></Login>
-       </Route>
-       <Route path="/register">
-         <Registation></Registation>
-       </Route>
-       <Route path="*">
-         <NotFind></NotFind>
-       </Route>
-     </Switch>
-     <Footer></Footer>
-   </Router>
+        </Route>
+        <Route path="/products">
+          <Products></Products>
+        </Route>
+        <Route path="/reviews">
+          <Reviews></Reviews>
+        </Route>
+        <Route path="/product/:productId">
+          <ProductOrder></ProductOrder>
+        </Route>
+        <Route path="/login">
+          <Login></Login>
+        </Route>
+        <Route path="/register">
+          <Registation></Registation>
+        </Route>
+        <Route path="*">
+          <NotFind></NotFind>
+        </Route>
+      </Switch>
+      <Footer></Footer>
+      </Router>
+     </AuthProvider>
+   </div>
   );
 }
 

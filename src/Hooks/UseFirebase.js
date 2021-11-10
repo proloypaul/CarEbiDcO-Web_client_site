@@ -1,4 +1,4 @@
-import {getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
+import {getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile  } from "firebase/auth";
 import initialization from "../Components/Firebase/firebase.init";
 import { useEffect, useState } from 'react';
 
@@ -16,6 +16,7 @@ const UseFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                saveUserTodb(user.email, user.displayName)
                 setError('')
                 const destination = location?.state?.from || '/';
                 history.replace(destination)
@@ -44,7 +45,14 @@ const UseFirebase = () => {
             // console.log(user)
             const newUser = {email, displayName: name}
             setUser(newUser)
-            
+            saveUserTodb(email, name)
+            updateProfile(auth.currentUser, {
+                displayName: name
+              }).then(() => {
+                // Profile updated!
+              }).catch((error) => {
+                  setError(error.message)
+              });
             history.replace('/')
             setError('')
         })
@@ -78,7 +86,23 @@ const UseFirebase = () => {
           });
     } 
 
-    
+    // collect user data to set database and update
+
+    const saveUserTodb = (email, name) => {
+        const user = {email, name}
+        const url = `http://localhost:3800/users`
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
      
 
 
