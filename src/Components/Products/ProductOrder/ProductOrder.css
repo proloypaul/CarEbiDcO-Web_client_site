@@ -1,0 +1,12 @@
+.productOrder-container{
+    display: flex;
+    justify-content: center;
+}
+.productOrder{
+    width: 400px;
+    
+}
+.orderForm{
+    display: flex;
+    align-items: center;
+}
