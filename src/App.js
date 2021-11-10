@@ -14,6 +14,7 @@ import ProductOrder from './Components/Products/ProductOrder/ProductOrder';
 import Login from './Components/Login/Login';
 import Registation from './Components/Login/Registation/Registation';
 import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './Context/PrivateRoute';
 
 function App() {
   return (
@@ -34,9 +35,9 @@ function App() {
         <Route path="/reviews">
           <Reviews></Reviews>
         </Route>
-        <Route path="/product/:productId">
+        <PrivateRoute path="/product/:productId">
           <ProductOrder></ProductOrder>
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
           <Login></Login>
         </Route>
