@@ -12,6 +12,7 @@ import Reviews from './Components/Home/Reviews/Reviews';
 import NotFind from './Components/NotFind/NotFind';
 import ProductOrder from './Components/Products/ProductOrder/ProductOrder';
 import Login from './Components/Login/Login';
+import Registation from './Components/Login/Registation/Registation';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
        </Route>
        <Route path="/login">
          <Login></Login>
+       </Route>
+       <Route path="/register">
+         <Registation></Registation>
        </Route>
        <Route path="*">
          <NotFind></NotFind>
