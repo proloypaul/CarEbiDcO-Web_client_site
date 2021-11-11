@@ -13,9 +13,11 @@ const DashboardHeader = () => {
 
                     </div>
                     <div className="navSection">
-                        <Link to="/home">Home</Link>
-                        <Link to="/Products">Products</Link>
-                        <Link to="/reviews">Reviews</Link>
+                        {user?.email && <span>
+                            <Link to="/myOrder">MyOrder</Link>
+                            <Link to="/review">Review</Link>
+                            <Link to="/pay">Pay</Link>
+                            </span>}
                         {user?.email ? <button onClick={signOutProcess} className="logBtn">LogOut</button> : <Link to="/login"><button className="logBtn">LogIn</button></Link>}
                     </div>
                 </nav>
