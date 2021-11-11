@@ -1,5 +1,6 @@
 import { Container, Grid} from '@mui/material';
 import React, {useState, useEffect} from 'react';
+import Header from '../Home/Header/Header';
 import Product from './Product/Product';
 
 const Products = () => {
@@ -16,7 +17,7 @@ const Products = () => {
     }, [])
     return (
         <div>
-            
+            <Header></Header>
             <Container sx={{my:10}}>
                 <h1>Products section</h1>
                 <Grid container spacing={2}>
