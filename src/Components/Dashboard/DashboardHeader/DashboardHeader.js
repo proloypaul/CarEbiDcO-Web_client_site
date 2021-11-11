@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../Context/useAuth';
 
 const DashboardHeader = () => {
-    const {user, signOutProcess} = useAuth()
+    const {user, admin, signOutProcess} = useAuth()
     return (
         <div className="navbar-container">
             <Container>
@@ -14,13 +14,17 @@ const DashboardHeader = () => {
                     </div>
                     <div className="navSection">
                         <Link to="/home">Home</Link>
-                        <Link to="/makeAdmin">Make Admin</Link>
-                        {user?.email && <span>
-                            <Link to="/myOrder">MyOrder</Link>
-                            <Link to="/review">Review</Link>
-                            <Link to="/pay">Pay</Link>
-                            </span>}
-                        {user?.email ? <button onClick={signOutProcess} className="logBtn">LogOut</button> : <Link to="/login"><button className="logBtn">LogIn</button></Link>}
+                        {admin ? <span>
+                            <Link to="/makeAdmin">Make Admin</Link>
+                            <Link to="/manageOrder">ManageOrder</Link>
+                            <Link to="/addProduct">AddProduct</Link>
+                            </span>: <span>
+                                <Link to="/myOrder">MyOrder</Link>
+                                <Link to="/review">Review</Link>
+                                <Link to="/pay">Pay</Link>
+                                </span>}
+                        
+                        {user?.email ? <Link to="/login"><button onClick={signOutProcess} className="logBtn">LogOut</button></Link>: <Link to="/login"><button className="logBtn">LogIn</button></Link>}
                     </div>
                 </nav>
             </Container>

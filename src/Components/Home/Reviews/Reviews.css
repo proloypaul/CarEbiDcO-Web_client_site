@@ -1,0 +1,27 @@
+.reviews-container{
+    background: crimson;
+    border: 0;
+    border-radius: 5px;
+    padding: 20px 0px;
+}
+.reviewsImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reviews-container img{
+    width: 250px;
+    height: 200px;
+    border: 10px solid #000000;
+    border-radius: 5px;
+}
+.reviews-container .title{
+    color: white;
+    padding-left: 10px; 
+} 
+.title h2{
+    font-weight: 300;
+}
+.title h4{
+    color: #000000;
+}

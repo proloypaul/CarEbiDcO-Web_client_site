@@ -1,6 +1,5 @@
 .navbar-container{
-    background: #404040;
-    /* background: #15202B; */
+    background: #191970;
     padding: 20px 0px;
 
     
@@ -14,22 +13,22 @@
     text-decoration: none;
     margin-right: 10px; 
     color: whitesmoke;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 18px;
 }
 .logBtn{
-    background: linear-gradient(#2c3e50, #4ca1af);
+    background: linear-gradient(#28282B, #301934);
     padding: 10px 20px;
-    border: 0;
+    border: 1px solid white;
     border-radius: 5px;
     font-weight: bold;
     color: whitesmoke;
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
 }
 .navSection :hover .logBtn{
-    color: whitesmoke;
-    border: 1px solid black;
+    border: 1px solid crimson;
+    color: crimson;
 
 }
 

@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         <footer className="footer-clean" >
-            <Container className="container" sx={{my: 10}}>
+            <Container className="container" sx={{py:10}}>
                 <Grid container spacing={2}>
                     <Grid item xs={4} md={3} className="item">
                         <h3>Products</h3>
