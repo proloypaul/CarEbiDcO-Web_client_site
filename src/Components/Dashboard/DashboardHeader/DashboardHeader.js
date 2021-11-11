@@ -14,6 +14,7 @@ const DashboardHeader = () => {
                     </div>
                     <div className="navSection">
                         <Link to="/home">Home</Link>
+                        <Link to="/makeAdmin">Make Admin</Link>
                         {user?.email && <span>
                             <Link to="/myOrder">MyOrder</Link>
                             <Link to="/review">Review</Link>

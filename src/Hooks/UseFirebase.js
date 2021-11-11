@@ -6,38 +6,41 @@ initialization()
 const UseFirebase = () => {
     const [user, setUser] = useState([])
     const [error, setError] = useState('')
-    // const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
     const auth = getAuth()
     const googleProvider = new GoogleAuthProvider()
 
     // sign in with google 
     const signInUsingGoogle = (history, location) => {
+        setIsLoading(true)
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
                 console.log(user)
-                saveUserTodb(user.email, user.displayName)
+                saveUserTodb(user.email, user.displayName, 'PUT')
                 setError('')
                 const destination = location?.state?.from || '/';
                 history.replace(destination)
             }).catch((error) => {
                 setError(error.message)
-            })
+            }).finally(() => setIsLoading(false))
     }
 
     // onAuthStateChange signin and signup state change
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user){
                 setUser(user)
             }else{
 
             }
           });
+          return () => unsubscribed;
     }, []) 
 
     // create user with email and password
     const registerWithEmailAndPassword = (email, password, name, history) => {
+        setIsLoading(true)
         // console.log(email, password)
         createUserWithEmailAndPassword(auth, email, password)
         .then((result) => {
@@ -45,7 +48,7 @@ const UseFirebase = () => {
             // console.log(user)
             const newUser = {email, displayName: name}
             setUser(newUser)
-            saveUserTodb(email, name)
+            saveUserTodb(email, name, 'POST')
             updateProfile(auth.currentUser, {
                 displayName: name
               }).then(() => {
@@ -58,7 +61,7 @@ const UseFirebase = () => {
         })
         .catch((error) => {
            setError(error.message)
-        });
+        }).finally(() => setIsLoading(false))
     }
 
     // login with email and password 
@@ -78,21 +81,22 @@ const UseFirebase = () => {
     }
     // sign out process
     const signOutProcess = () => {
+        setIsLoading(true)
         signOut(auth).then(() => {
             // Sign-out successful.
             setUser({})
           }).catch((error) => {
               setError(error.message)
-          });
+          }).finally(() => setIsLoading(false))
     } 
 
     // collect user data to set database and update
 
-    const saveUserTodb = (email, name) => {
+    const saveUserTodb = (email, name, method) => {
         const user = {email, name}
         const url = `http://localhost:3800/users`
         fetch(url, {
-            method: 'POST',
+            method: method,
             headers: {
                 'content-type': 'application/json'
             },
@@ -100,7 +104,7 @@ const UseFirebase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
             })
     }
      
@@ -109,6 +113,7 @@ const UseFirebase = () => {
     return{
         user,
         error,
+        isLoading,
         signInUsingGoogle,
         signOutProcess, 
         registerWithEmailAndPassword,
