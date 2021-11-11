@@ -5,7 +5,6 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Components/Home/Home';
-import Header from './Components/Home/Header/Header';
 import Footer from './Components/Home/Footer/Footer';
 import Products from './Components/Products/Products';
 import Reviews from './Components/Home/Reviews/Reviews';
