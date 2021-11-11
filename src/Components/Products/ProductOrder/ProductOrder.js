@@ -1,24 +1,63 @@
-import { Container, Grid, TextField } from '@mui/material';
+import { Alert, Container, Grid, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import useAuth from '../../../Context/useAuth';
 import './ProductOrder.css'
 
 const ProductOrder = () => {
+    const {user} = useAuth()
+    const initialData = {name: user.displayName, email: user.email, phone: '', presentAddress: ''}
     // const productId = useParams()
     // console.log(productId)
     const {productId} = useParams()
-    const [userOrder, setUserOrder] = useState([])
+    const [productDetail, setProductDetail] = useState([])
+    const [orderData, setOrderData] = useState(initialData)
+    const [successful, setSuccessful] = useState(false)
 
     useEffect(() => {
         const url = `http://localhost:3800/products/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                setUserOrder(data)
+                setProductDetail(data)
                 // console.log(data)
             })
     }, [])
     // console.log(userOrder)
+
+    const handleBlur = event => {
+        const field = event.target.name;
+        const value = event.target.value; 
+        const allOrderData = {...orderData}
+        allOrderData[field] = value;
+        setOrderData(allOrderData)
+
+    }
+    const handleOrder = event => {
+        event.preventDefault()
+        // console.log(orderData)
+        const userOrder = {
+            ...orderData,
+            date: new Date().toLocaleDateString()
+        }
+        // console.log(userOrder)
+        const url = `http://localhost:3800/orders`
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userOrder)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                if(data.acknowledged){
+                    setSuccessful(true)
+                }
+            })
+    }
+
 
     const imgStyle = {
         weight: "400px",
@@ -34,33 +73,35 @@ const ProductOrder = () => {
                 <Grid item xs={12} md={6} className="productOrder-container">
                     <div className="productOrder">
                         <div style={{textAlign: "center"}}>
-                            <img src={userOrder.img} alt="Empty!" style={imgStyle}/>
+                            <img src={productDetail.img} alt="Empty!" style={imgStyle}/>
                         </div>
                         <div style={{width: "300px", paddingLeft:"10px"}}>
                             <div style={{display:"flex", justifyContent:"space-between"}}>
-                                <h3>Model: {userOrder.Model}</h3>
-                                <h3>Brand: {userOrder.brand}</h3>
+                                <h3>Model: {productDetail.Model}</h3>
+                                <h3>Brand: {productDetail.brand}</h3>
                             </div>
-                            <h3>Price: ${userOrder.price}</h3>
-                            <p>{userOrder.description}</p>
+                            <h3>Price: ${productDetail.price}</h3>
+                            <p>{productDetail.description}</p>
                         </div>
                     </div>
                 </Grid>
                 <Grid item xs={12} md={6} className="orderForm">
-                    <form>
+                    <form onSubmit={handleOrder}>
                     <TextField
                     id="outlined-password-input"
-                    label="Your Name"
+                    defaultValue= {user.displayName}
                     type="text"
                     name="name"
+                    onBlur={handleBlur}
                     style={{width: "80%"}}
                     autoComplete="current-password"
                     />
                     <TextField
                     id="outlined-password-input"
-                    label="abc@gmail.com"
+                    defaultValue={user.email}
                     type="email"
                     name="email"
+                    onBlur={handleBlur}
                     style={{width: "80%", margin:"10px 0px"}}
                     autoComplete="current-password"
                     />
@@ -69,6 +110,7 @@ const ProductOrder = () => {
                     label="phone"
                     type="number"
                     name="phone"
+                    onBlur={handleBlur}
                     style={{width: "80%"}}
                     autoComplete="current-password"
                     />
@@ -76,7 +118,17 @@ const ProductOrder = () => {
                     id="outlined-password-input"
                     label="Present Address"
                     type="text"
-                    name="address"
+                    name="presentAddress"
+                    onBlur={handleBlur}
+                    style={{width: "80%", margin: "10px 0px"}}
+                    autoComplete="current-password"
+                    />
+                    <TextField
+                    id="outlined-password-input"
+                    label="Model, Brand"
+                    type="text"
+                    name="OrderItem"
+                    onBlur={handleBlur}
                     style={{width: "80%", margin: "10px 0px"}}
                     autoComplete="current-password"
                     />
@@ -86,6 +138,7 @@ const ProductOrder = () => {
                     </form>
                 </Grid>
             </Grid>
+            {successful && <Alert severity="success">Your Order Submit Successfully! Enjoy Your Time</Alert>}
         </Container>
     );
 };
