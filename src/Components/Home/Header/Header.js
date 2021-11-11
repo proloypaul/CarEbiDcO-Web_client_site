@@ -7,19 +7,21 @@ import './Header.css';
 const Header = () => {
     const {user, signOutProcess} = useAuth()
     return (
-        <Container>
-            <nav className="navBar">
-                <div className="navLogo">
+        <div className="navbar-container">
+            <Container>
+                <nav className="navBar">
+                    <div className="navLogo">
 
-                </div>
-                <div className="navSection">
-                    <Link to="/home">Home</Link>
-                    <Link to="/Products">Products</Link>
-                    <Link to="/reviews">Reviews</Link>
-                    {user?.email ? <button onClick={signOutProcess}>LogOut</button> : <Link to="/login"><button>LogIn</button></Link>}
-                </div>
-            </nav>
-        </Container>
+                    </div>
+                    <div className="navSection">
+                        <Link to="/home">Home</Link>
+                        <Link to="/Products">Products</Link>
+                        <Link to="/reviews">Reviews</Link>
+                        {user?.email ? <button onClick={signOutProcess} className="logBtn">LogOut</button> : <Link to="/login"><button className="logBtn">LogIn</button></Link>}
+                    </div>
+                </nav>
+            </Container>
+        </div>
     );
 };
 
