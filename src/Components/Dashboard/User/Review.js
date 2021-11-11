@@ -32,7 +32,7 @@ const Review = () => {
 
     return (
         <div>
-            <h1>Give your review here</h1>
+            <h1 style={{fontWeight: 300}}>Hellow, Guys Give your Complement below</h1>
             <Container>
                 <div>
                     <form onSubmit={handleReview}>
@@ -80,7 +80,7 @@ const Review = () => {
                             />
                         </div>
                         <div>
-                            <button type="submit">Review</button>
+                            <button type="submit" className="logBtn">Review</button>
                         </div>
                     
                     </form>

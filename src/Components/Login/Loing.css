@@ -1,0 +1,22 @@
+.login-container{
+    background: #301934;
+    color: white;
+}
+.loginProcess{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signInBtn{
+    width: 80%;
+    padding: 10px 0px;
+    background: #000000;
+    color: white;
+    font-size: 20px;
+    border: 0;
+    border-radius: 5px;
+}
+.signInBtn i{
+    font-size: 40px;
+    color: whitesmoke;
+}

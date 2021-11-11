@@ -31,8 +31,8 @@ const Registation = () => {
     return (
         <div>
             <Header></Header>
-            <Container>
-                <h1>Registation section</h1>
+            <Container className="register">
+                <h1>Register here</h1>
                 <div className="form-container">
                     <form onSubmit={handleRegister}>
                         <TextField

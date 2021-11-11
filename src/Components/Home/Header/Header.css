@@ -1,8 +1,6 @@
 .navbar-container{
     background: #191970;
-    padding: 20px 0px;
-
-    
+    padding: 20px 0px;  
 }
 .navBar{
     display: flex;
@@ -31,5 +29,3 @@
     color: crimson;
 
 }
-
-/* #15202B */
