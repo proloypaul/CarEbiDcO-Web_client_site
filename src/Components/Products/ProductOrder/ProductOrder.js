@@ -54,6 +54,7 @@ const ProductOrder = () => {
                 // console.log(data)
                 if(data.acknowledged){
                     setSuccessful(true)
+                    event.target.reset()
                 }
             })
     }
