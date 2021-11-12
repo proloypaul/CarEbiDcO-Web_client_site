@@ -13,9 +13,10 @@ const imgStyle = {
 const Banner = () => {
     return (
         <div className="banner-container">
-            <h1 style={{color: 'white', textAlign: 'center'}}>The Wind is not even close to us</h1>
             <Container>
-                <h1>Banner title </h1>
+                <div className="banner-title">
+                    <h1>The Wind Is Not Even <span>close to us</span></h1>
+                </div>
                 <Grid container spacing={2} sx={{textAlign: "center"}}>
                     <Grid item xs={12} md={6}>
                         <img src={bannerTwo} alt="Empty!" style={imgStyle}/>
@@ -25,6 +26,12 @@ const Banner = () => {
                     </Grid>
 
                 </Grid>
+                <div style={{textAlign:"center"}}>
+                    <button className="bannerBtn">Discover More</button>
+                </div>
+                <div className="banner-content">
+                    <p>These are the safest cars that were tested in 2021. include the latest safest technologies, they are also some of the safest cars in history  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium vel iste provident quasi qui rerum sapiente quo! Ipsam, dolore fuga voluptatem quia saepe quaerat? Explicabo blanditiis soluta corrupti nesciunt repellat.</p>
+                </div>
             </Container>
         </div>
     );

@@ -16,7 +16,7 @@ const Reviews = () => {
     }, [])
     return (
         <div>
-            <h1 style={{textAlign: 'center'}}>Users Review</h1>
+            <h1 className="section-title">User Reviews</h1>
             <Container>
                 <Grid container spacing={2}>
                     {reviews.map(review => <Grid item xs={12} md={4} key={review._id}>
