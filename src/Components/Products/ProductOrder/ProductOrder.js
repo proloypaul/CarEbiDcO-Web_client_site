@@ -15,7 +15,7 @@ const ProductOrder = () => {
     const [successful, setSuccessful] = useState(false)
 
     useEffect(() => {
-        const url = `http://localhost:3800/products/${productId}`
+        const url = `https://salty-temple-09318.herokuapp.com/products/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -41,7 +41,7 @@ const ProductOrder = () => {
             date: new Date().toLocaleDateString()
         }
         // console.log(userOrder)
-        const url = `http://localhost:3800/orders`
+        const url = `https://salty-temple-09318.herokuapp.com/orders`
         fetch(url, {
             method: 'POST',
             headers: {

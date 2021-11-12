@@ -6,7 +6,7 @@ const Products = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:3800/products`
+        const url = `https://salty-temple-09318.herokuapp.com/products`
         fetch(url)
             .then(res => res.json())
             .then(data => {

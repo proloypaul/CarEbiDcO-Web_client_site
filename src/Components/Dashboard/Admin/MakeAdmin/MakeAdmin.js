@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     const handleAdmin = event => {
         event.preventDefault()
         const admin = {email: adminEmail}
-        const url = `http://localhost:3800/users/admin`
+        const url = `https://salty-temple-09318.herokuapp.com/users/admin`
         fetch(url, {
             method: 'put',
             headers: {

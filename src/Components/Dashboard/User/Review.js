@@ -18,7 +18,7 @@ const Review = () => {
     const handleReview = event => {
         event.preventDefault()
         // console.log(reviewData)
-        const url = `http://localhost:3800/reviews`
+        const url = `https://salty-temple-09318.herokuapp.com/reviews`
         fetch(url, {
             method: 'POST',
             headers: {

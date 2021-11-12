@@ -38,7 +38,7 @@ const MyOrder = () => {
     const [userOrder, setUserOrder] = useState([])
 
     useEffect(()=> {
-        const url = `http://localhost:3800/orders/${user.email}`
+        const url = `https://salty-temple-09318.herokuapp.com/orders/${user.email}`
         fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -51,7 +51,7 @@ const MyOrder = () => {
         // console.log(id)
         const confirmMsg = window.confirm("Would you like to  delete this order?")
         if(confirmMsg){
-            const url = `http://localhost:3800/orders/${id}`
+            const url = `https://salty-temple-09318.herokuapp.com/orders/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

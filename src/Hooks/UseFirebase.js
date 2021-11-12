@@ -96,7 +96,7 @@ const UseFirebase = () => {
 
     const saveUserTodb = (email, name, method) => {
         const user = {email, name}
-        const url = `http://localhost:3800/users`
+        const url = `https://salty-temple-09318.herokuapp.com/users`
         fetch(url, {
             method: method,
             headers: {
@@ -114,7 +114,7 @@ const UseFirebase = () => {
 
     // load admin 
     useEffect(() => {
-        const url = `http://localhost:3800/users/${user.email}`
+        const url = `https://salty-temple-09318.herokuapp.com/users/${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
