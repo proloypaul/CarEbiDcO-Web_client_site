@@ -1,5 +1,6 @@
 import { Alert, Container, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import './MakeAdmin.css';
 
 const MakeAdmin = () => {
     const [adminEmail, setAdminEmail] = useState('')
@@ -30,9 +31,9 @@ const MakeAdmin = () => {
 
     }
     return (
-        <div>
-            <Container>
-                <h1>Make an Admin section</h1>
+        <div className="makeAdmin-container">
+            <Container className="makeAdmin">
+                <h1>Make <span>an</span> Admin</h1>
                 <form onSubmit={handleAdmin}>
                 <TextField
                     id="standard-password-input"
@@ -44,10 +45,10 @@ const MakeAdmin = () => {
                     autoComplete="current-password"
                     variant="standard"
                 />
-                <button type="submit">Admin</button>
-                {successful ? <Alert severity="success">{adminEmail} added Admin successfully!</Alert> : <Alert severity="warning">{adminEmail} You can't admin any user who don't Register here!</Alert>}
+                <button type="submit" className="logBtn">Admin</button>
                 </form>
             </Container>     
+            {successful ? <Alert severity="success">{adminEmail} added Admin successfully!</Alert> : <Alert severity="warning">{adminEmail} You can't admin any user who don't Register here!</Alert>}
         </div>
     );
 };
