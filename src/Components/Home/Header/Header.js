@@ -18,6 +18,7 @@ const Header = () => {
                         <Link to="/Products">Products</Link>
                         <Link to="/reviews">Reviews</Link>
                         {user?.email && <Link to="/dashboard">Dashboard</Link>}
+                        <Link to="/explore">Explore</Link>
                         {user?.email ? <button onClick={signOutProcess} className="logBtn">LogOut</button> : <Link to="/login"><button className="logBtn">LogIn</button></Link>}
                     </div>
                 </nav>

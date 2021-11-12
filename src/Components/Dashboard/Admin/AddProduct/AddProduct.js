@@ -15,7 +15,21 @@ const AddProduct = () => {
     }
     const handleProduct = event => {
         event.preventDefault()
-        console.log(addProduct)
+        // console.log(addProduct)
+        const url = `http://localhost:3800/products`
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if(data.insertedId){
+                    alert("Product Submited!")
+                }
+            })
     }
     return (
         <div>
@@ -37,7 +51,7 @@ const AddProduct = () => {
                         id="outlined-password-input"
                         label="Enter Model Name"
                         type="text"
-                        name="Modle"
+                        name="Model"
                         onBlur={handleBlur}
                         style={{width: "50%"}}
                         autoComplete="current-password"
