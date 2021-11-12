@@ -1,0 +1,9 @@
+.addProduct-container{
+    padding: 40px 0px;
+    
+}
+.addProduct-form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

@@ -52,7 +52,7 @@ const Login = () => {
                             style={{width: "80%", margin: "10px 0px", background: "white"}}
                             />
                             <div>
-                                <button type="submit" class="logBtn">LogIn</button>
+                                <button type="submit" className="logBtn">LogIn</button>
                             </div>
                             </form>
                             <div>

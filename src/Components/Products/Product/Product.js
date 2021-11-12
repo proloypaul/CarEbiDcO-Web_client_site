@@ -7,7 +7,6 @@ const productImg = {
     height: "150px",
     border: 0,
     borderRadius: "10px"
-    
 }
 const Product = (props) => {
     const {Model, brand, img, _id} = props.product 

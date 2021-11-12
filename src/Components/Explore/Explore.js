@@ -1,4 +1,4 @@
-import { Container, Grid, Link } from '@mui/material';
+import { Container, Grid} from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import AllProducts from './AllProducts/AllProducts';
 
@@ -24,8 +24,7 @@ const Explore = () => {
                         <AllProducts product={product}></AllProducts>
                     </Grid>)}
                 </Grid>
-            </Container>
-            
+            </Container>      
         </div>
     );
 };

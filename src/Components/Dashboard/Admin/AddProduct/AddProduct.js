@@ -1,7 +1,7 @@
 import { Container, TextField } from '@mui/material';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
-
 import React, { useState } from 'react';
+import './AddProduct.css';
 
 const AddProduct = () => {
     const [addProduct, setAddProduct] = useState({})
@@ -32,13 +32,13 @@ const AddProduct = () => {
             })
     }
     return (
-        <div>
-            <Container>
+        <div className="addProduct-container">
+            <Container className="addProduct-form">
                 <form onSubmit={handleProduct}>
                     <div>
                         <TextField
                         id="outlined-password-input"
-                        label="hosting img link"
+                        label="Hosting img link"
                         type="text"
                         name="img"
                         onBlur={handleBlur}
@@ -49,7 +49,7 @@ const AddProduct = () => {
                     <div>
                         <TextField
                         id="outlined-password-input"
-                        label="Enter Model Name"
+                        label="Model Name"
                         type="text"
                         name="Model"
                         onBlur={handleBlur}
@@ -60,7 +60,7 @@ const AddProduct = () => {
                     <div>
                         <TextField
                         id="outlined-password-input"
-                        label="Enter Brand Name"
+                        label="Brand Name"
                         type="text"
                         name="brand"
                         onBlur={handleBlur}
@@ -75,13 +75,13 @@ const AddProduct = () => {
                         placeholder="Product description..... "
                         name="description"
                         onBlur={handleBlur}
-                        style={{ width: "50%", height: "100px" }}
+                        style={{ width: "50%", height: "100px"}}
                         />
                     </div>
                     <div>
                         <TextField
                         id="outlined-password-input"
-                        label="Enter product price"
+                        label="Price"
                         type="number"
                         name="price"
                         onBlur={handleBlur}
