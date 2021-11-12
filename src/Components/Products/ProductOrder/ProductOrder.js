@@ -22,7 +22,7 @@ const ProductOrder = () => {
                 setProductDetail(data)
                 // console.log(data)
             })
-    }, [])
+    }, [productId])
     // console.log(userOrder)
 
     const handleBlur = event => {

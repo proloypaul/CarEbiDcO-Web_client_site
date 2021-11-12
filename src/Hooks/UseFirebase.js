@@ -33,11 +33,12 @@ const UseFirebase = () => {
             if (user){
                 setUser(user)
             }else{
-
+                setUser({})
             }
+            setIsLoading(false)
           });
           return () => unsubscribed;
-    }, []) 
+    }, [auth]) 
 
     // create user with email and password
     const registerWithEmailAndPassword = (email, password, name, history) => {
