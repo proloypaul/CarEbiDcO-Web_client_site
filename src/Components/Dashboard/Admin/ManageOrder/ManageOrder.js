@@ -37,7 +37,7 @@ const ManageOrder = () => {
     const [allOrder, setAllOrder] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:3800/orders`
+        const url = `https://salty-temple-09318.herokuapp.com/orders`
         fetch(url)
             .then(res => res.json())
             .then(data => {

@@ -6,7 +6,7 @@ const Explore = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:3800/products`
+        const url = `https://salty-temple-09318.herokuapp.com/products`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -16,9 +16,7 @@ const Explore = () => {
     }, [])
     return (
         <div>
-            <h1>Explore section</h1>
             <Container sx={{my:10}}>
-                <h1>Products section</h1>
                 <Grid container spacing={2}>
                     {products.map(product => <Grid  key={product._id} item xs={12} md={4}>
                         <AllProducts product={product}></AllProducts>

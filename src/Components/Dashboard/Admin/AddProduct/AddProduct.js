@@ -16,7 +16,7 @@ const AddProduct = () => {
     const handleProduct = event => {
         event.preventDefault()
         // console.log(addProduct)
-        const url = `http://localhost:3800/products`
+        const url = `https://salty-temple-09318.herokuapp.com/products`
         fetch(url, {
             method: 'POST',
             headers: {
