@@ -1,0 +1,12 @@
+.manageOrders{
+    display: flex; 
+    
+    justify-content: space-between;
+    margin: 40px 0;
+}
+.manageOrders h1{
+    font-weight: 300;
+}
+span{
+    color: crimson;
+}
