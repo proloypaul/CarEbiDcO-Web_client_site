@@ -27,6 +27,7 @@ const DashboardHeader = () => {
                             <Link to="/makeAdmin">Make Admin</Link>
                             <Link to="/manageOrder">ManageOrder</Link>
                             <Link to="/addProduct">AddProduct</Link>
+                            <Link to="manageProduct">ManageProduct</Link>
                             </span>: <span>
                                 <Link to="/myOrder">MyOrder</Link>
                                 <Link to="/review">Review</Link>

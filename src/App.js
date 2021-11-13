@@ -23,6 +23,7 @@ import ManageOrder from './Components/Dashboard/Admin/ManageOrder/ManageOrder';
 import AddProduct from './Components/Dashboard/Admin/AddProduct/AddProduct';
 import Explore from './Components/Explore/Explore';
 import CareQuality from './Components/CareQuality/CareQuality';
+import ManageProduct from './Components/Dashboard/Admin/ManageProduct/ManageProduct';
 
 function App() {
   return (
@@ -71,6 +72,9 @@ function App() {
         </Route>
         <Route path="/manageOrder">
           <ManageOrder></ManageOrder>
+        </Route>
+        <Route path="/manageProduct">
+          <ManageProduct></ManageProduct>
         </Route>
         <Route path="/carQuality">
           <CareQuality></CareQuality>

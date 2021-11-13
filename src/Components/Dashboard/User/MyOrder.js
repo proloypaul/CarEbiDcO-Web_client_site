@@ -65,10 +65,11 @@ const MyOrder = () => {
                     }
                 })
         }else{
-            alert("Your Order don't delete")
+            alert("Your Order is Okay")
         }
-
     }
+
+    
     return (
         <div> 
             <Container className="myOrder-container">
