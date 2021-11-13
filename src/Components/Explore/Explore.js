@@ -39,4 +39,4 @@ export default Explore;
 // https://i.ibb.co/Fwryfs3/care-eight.jpg
 // https://i.ibb.co/HgKhG6x/care-nine.jpg
 // https://i.ibb.co/Vwdr54B/care-ten.jpg
-// https://i.ibb.co/fM5nHMb/care-seven.jpg
+// 

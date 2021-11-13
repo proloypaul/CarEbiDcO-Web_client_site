@@ -1,5 +1,5 @@
-import { Link } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const productImg = {
@@ -10,6 +10,7 @@ const productImg = {
 }
 const AllProducts = (props) => {
     const {Model, brand, img, _id} = props.product 
+    // console.log(_id)
 
     return (
         <div>
@@ -17,7 +18,7 @@ const AllProducts = (props) => {
                 <h3 className="product-title">{Model}, {brand}</h3>
                 <img src={img} alt="Empty!" style={productImg}/>
                 <div>
-                    <Link to={`/allProduct/${_id}`}><button className="productBtn">Book Now</button></Link>
+                    <Link to={`/product/${_id}`}><button className="productBtn">Book Now</button></Link>
                 </div>
             </div>
         </div>
