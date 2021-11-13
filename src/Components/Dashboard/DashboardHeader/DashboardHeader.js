@@ -2,6 +2,10 @@ import { Container } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Context/useAuth';
+import navlogoTwo from '../../../images/navlogo.png';
+const navLogoSize = {
+    width: "50px"
+}
 
 const DashboardHeader = () => {
     const {user, admin, signOutProcess} = useAuth()
@@ -9,8 +13,13 @@ const DashboardHeader = () => {
         <div className="navbar-container">
             <Container>
                 <nav className="navBar">
-                    <div className="navLogo">
-
+                <div className="navLogo">
+                        <Link to="/home">
+                            <div className="logo-title">
+                                <img src={navlogoTwo} alt="Empty" style={navLogoSize}/>
+                                <p>CarEbiDcO</p>
+                            </div>
+                        </Link>
                     </div>
                     <div className="navSection">
                         <Link to="/home">Home</Link>

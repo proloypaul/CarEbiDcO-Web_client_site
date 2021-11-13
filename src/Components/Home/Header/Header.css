@@ -1,13 +1,21 @@
 .navbar-container{
     background: #191970;
-    padding: 20px 0px;  
+      
 }
 .navBar{
     display: flex;
     justify-content: space-between;
 
 }
-.navSection a{
+.navLogo .logo-title{
+    display: flex;
+    align-items: center;
+}
+.logo-title p{
+    font-size: 25px;
+    font-weight: bold;
+}
+.navBar a{
     text-decoration: none;
     margin-right: 10px; 
     color: whitesmoke;
@@ -23,6 +31,9 @@
     color: whitesmoke;
     font-size: 15px;
     cursor: pointer;
+}
+.navSection{
+    margin-top: 20px;
 }
 .navSection :hover .logBtn{
     border: 1px solid crimson;

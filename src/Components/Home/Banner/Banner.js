@@ -29,9 +29,7 @@ const Banner = () => {
                 <div style={{textAlign:"center"}}>
                     <button className="bannerBtn">Discover More</button>
                 </div>
-                <div className="banner-content">
-                    <p>These are the safest cars that were tested in 2021. include the latest safest technologies, they are also some of the safest cars in history  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium vel iste provident quasi qui rerum sapiente quo! Ipsam, dolore fuga voluptatem quia saepe quaerat? Explicabo blanditiis soluta corrupti nesciunt repellat.</p>
-                </div>
+                
             </Container>
         </div>
     );

@@ -17,7 +17,7 @@ const Products = () => {
     return (
         <div>
             <Container sx={{my:10}}>
-                <h1 className="section-title">Products</h1>
+                <h1 className="section-title">Cars</h1>
                 <Grid container spacing={2}>
                     {products.map(product => <Grid  key={product._id} item xs={12} md={4}>
                         <Product product={product}></Product>

@@ -22,6 +22,7 @@ import MakeAdmin from './Components/Dashboard/Admin/MakeAdmin/MakeAdmin';
 import ManageOrder from './Components/Dashboard/Admin/ManageOrder/ManageOrder';
 import AddProduct from './Components/Dashboard/Admin/AddProduct/AddProduct';
 import Explore from './Components/Explore/Explore';
+import CareQuality from './Components/CareQuality/CareQuality';
 
 function App() {
   return (
@@ -70,6 +71,9 @@ function App() {
         </Route>
         <Route path="/manageOrder">
           <ManageOrder></ManageOrder>
+        </Route>
+        <Route path="/carQuality">
+          <CareQuality></CareQuality>
         </Route>
         <Route path="/explore">
           <Explore></Explore>
