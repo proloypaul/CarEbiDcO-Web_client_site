@@ -69,11 +69,11 @@ const MyOrder = () => {
         }
     }
 
-    
+
     return (
         <div> 
             <Container className="myOrder-container">
-                <h1>Your Order  {userOrder.length}</h1>
+                <h1>Your Order  <span>{userOrder.length}</span></h1>
                 <TableContainer component={Paper}>
                     <Table aria-label="customized table">
                         <TableHead>

@@ -1,0 +1,39 @@
+.manageAllProduct-title{
+    font-weight: 300;
+    text-align: center;
+}
+.allProduct-container{
+    background: #000000;
+    border: 0;
+    border-radius: 5px;
+    padding: 20px 0px;
+}
+.allProductImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.allProduct-container img{
+    width: 250px;
+    height: 200px;
+    border: 10px solid orangered;
+    border-radius: 5px;
+}
+.allProduct-container .content{
+    color: white;
+    padding-left: 10px; 
+} 
+.content h2{
+    font-weight: 300;
+}
+.content h4{
+    color: orangered;
+}
+.dltBtnTwo{
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid white;
+    font-size: 18px;
+    border-radius: 5px;
+}

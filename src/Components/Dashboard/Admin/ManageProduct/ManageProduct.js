@@ -1,13 +1,8 @@
 import { Container, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import './ManageProduct.css';
 
 
-const dltBtn = {
-    background: "rgba(180, 17, 17, 0.986)",
-    color: "white",
-    padding: "10px 20px",
-    border: "1px solid white"
-}
 const ManageProduct = () => {
     const [allProduct, setAllProduct] = useState([])
 
@@ -25,7 +20,7 @@ const ManageProduct = () => {
         // console.log(id)
         const confirmMsg = window.confirm("Would you like to  delete this Product?")
         if(confirmMsg){
-            const url = `http://localhost:3800/products/${id}`
+            const url = `https://salty-temple-09318.herokuapp.com/products/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -45,19 +40,19 @@ const ManageProduct = () => {
     
     return (
         <div>
-            <h1>Manage Produdct section</h1>
-            <Container>
+            <h1 className="manageAllProduct-title">Manage <span>all</span> Produdct</h1>
+            <Container sx={{my:5}}>
                 <Grid container spacing={2}>
                     {allProduct.map(product => <Grid item xs={12} md={4} key={product._id}>
-                        <div className="reviews-container">
-                            <div className="reviewsImg">
+                        <div className="allProduct-container">
+                            <div className="allProductImg">
                                 <img src={product.img} alt="Empty"/>
                             </div>
-                            <div className="title">
+                            <div className="content">
                                 <h2>Model: {product.Model}</h2>
                                 <h4>Brand: {product.brand}</h4>
                                 <p>{product.description}</p>
-                                <button style={dltBtn} onClick={() => handleDltBtn(product._id)}>Delete</button>
+                                <button className="dltBtnTwo" onClick={() => handleDltBtn(product._id)}>Delete</button>
                             </div>
                         </div>
                     </Grid>)}

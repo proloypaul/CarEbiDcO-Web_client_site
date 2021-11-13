@@ -32,9 +32,9 @@ const Review = () => {
 
     return (
         <div>
-            <h1 style={{fontWeight: 300}}>Hellow, Guys Give your Complement below</h1>
-            <Container>
-                <div>
+            <h1 style={{fontWeight: 300, textAlign:"center"}}>Hellow, Guys Give <span>your Complement</span> below</h1>
+            <Container sx={{my:5}}>
+                <div style={{textAlign: "center"}}>
                     <form onSubmit={handleReview}>
                         <div>
                             <TextField
