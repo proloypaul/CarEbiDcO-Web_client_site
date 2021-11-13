@@ -15,7 +15,7 @@ const Banner = () => {
         <div className="banner-container">
             <Container>
                 <div className="banner-title">
-                    <h1>The Wind Is Not Even <span>close to us</span></h1>
+                    <h1>The Wind Is Not Even <span>Close To Us</span></h1>
                 </div>
                 <Grid container spacing={2} sx={{textAlign: "center"}}>
                     <Grid item xs={12} md={6}>

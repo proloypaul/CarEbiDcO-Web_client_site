@@ -15,7 +15,7 @@ const Product = (props) => {
             <h3 className="product-title">{Model}, {brand}</h3>
             <img src={img} alt="Empty!" style={productImg}/>
             <div>
-                <Link to={`/product/${_id}`}><button className="productBtn">Book Now</button></Link>
+                <Link to={`/product/${_id}`}><button className="logBtn">Purchase</button></Link>
             </div>
         </div>
     );

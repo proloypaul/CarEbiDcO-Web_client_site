@@ -13,6 +13,7 @@
 .bannerBtn{
     background: crimson;
     color: white;
+    font-weight: bold;
     padding: 10px 20px;
     border: 2px solid white;
     border-radius: 5px;

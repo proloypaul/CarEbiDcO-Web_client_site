@@ -27,7 +27,8 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
-                    alert("Product Submited!")
+                    alert("Product Uploaded!")
+                    event.target.reset()
                 }
             })
     }
