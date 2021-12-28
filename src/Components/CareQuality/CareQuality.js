@@ -1,15 +1,8 @@
 import { Container, Grid } from '@mui/material';
 import React from 'react';
 import careQualityImg from '../../images/careFunctionality.jpg'
+import './CareQuality.css'
 
-
-const imgSize = {
-    width: "400px",
-    height: "400px",
-    border: "0",
-    borderRadius: "5px"
-
-}
 const CareQuality = () => {
     return (
         <div style={{background: "#000000", color: "orange"}}>
@@ -30,8 +23,8 @@ const CareQuality = () => {
                         <li><b>2015+ Tesla Model X, 3, Y</b></li>
                         
                     </Grid>
-                    <Grid item xs={12} md={6} sx={{textAlign: "center"}}>
-                        <img src={careQualityImg} alt="Empty!" style={imgSize}/>
+                    <Grid item xs={12} md={6} sx={{textAlign: "center"}} className='careQualityImg'>
+                        <img src={careQualityImg} alt="Empty!"/>
                     </Grid>
                 </Grid>
             </Container>

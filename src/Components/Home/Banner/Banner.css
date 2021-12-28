@@ -23,3 +23,11 @@
     font-size: 15px;
 
 }
+
+
+@media (max-width: 690px) {
+    .banner-container{
+        background-image: url('../../../images/banner.jpg');
+        height: 800px;
+    }
+}

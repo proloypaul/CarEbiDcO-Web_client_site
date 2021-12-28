@@ -62,7 +62,7 @@ const Login = () => {
                             <button onClick={() => signInUsingGoogle(history, location)} className="signInBtn"><i className="fab fa-google"></i> signIn</button>
                         </div>
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={6} className='loginImg'>
                         <img src={loginImg} alt="Empty!"/>
                     </Grid>
                 </Grid>

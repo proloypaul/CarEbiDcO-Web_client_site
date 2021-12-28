@@ -20,3 +20,17 @@
     font-size: 40px;
     color: whitesmoke;
 }
+.loginImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginImg img{
+    width: 500px;
+}
+
+@media (max-width: 690px) {
+    .loginImg img{
+        width: 300px;
+    }
+}
