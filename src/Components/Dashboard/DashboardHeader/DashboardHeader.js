@@ -1,5 +1,5 @@
 import { Container } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Context/useAuth';
 import navlogoTwo from '../../../images/navlogo.png';
@@ -8,12 +8,13 @@ const navLogoSize = {
 }
 
 const DashboardHeader = () => {
+    const [showBar, setShowBar] = useState(false)
     const {user, admin, signOutProcess} = useAuth()
     return (
         <div className="navbar-container">
             <Container>
-                <nav className="navBar">
-                <div className="navLogo">
+                <div className='navbar'>
+                    <div className='nav-title'>
                         <Link to="/home">
                             <div className="logo-title">
                                 <img src={navlogoTwo} alt="Empty" style={navLogoSize}/>
@@ -21,23 +22,32 @@ const DashboardHeader = () => {
                             </div>
                         </Link>
                     </div>
-                    <div className="navSection">
-                        <Link to="/home">Home</Link>
-                        {admin ? <span>
-                            <Link to="/makeAdmin">Make Admin</Link>
-                            <Link to="/manageOrder">ManageOrder</Link>
-                            <Link to="/addProduct">AddProduct</Link>
-                            <Link to="manageProduct">ManageProduct</Link>
-                            </span>: <span>
-                                <Link to="/myOrder">MyOrder</Link>
-                                <Link to="/review">Review</Link>
-                                <Link to="/pay">Pay</Link>
-                                </span>}
+                    <p className='bar-button' onClick={() => setShowBar(!showBar) }><i className="fas fa-bars"></i></p>
+                    { showBar ? "" : <div className="nav-links">
+                        <ul>
+                            <li><Link to="/home">Home</Link></li>
+                            { admin ? <span>
+                                <ul>
+                                    <li><Link to="/makeAdmin">Make Admin</Link></li>
+                                    <li><Link to="/manageOrder">ManageOrder</Link></li>
+                                    <li><Link to="/addProduct">AddProduct</Link></li>
+                                    <li><Link to="manageProduct">ManageProduct</Link></li>
+                                </ul>
+                            </span>:<span>
+                                <ul>
+                                    <li><Link to="/myOrder">MyOrder</Link></li>
+                                    <li><Link to="/review">Review</Link></li>
+                                    <li><Link to="/pay">Pay</Link></li>
+                                </ul>
+                                </span>
+                            }
+                            <li>{user?.email ? <Link to="/login"><button onClick={signOutProcess} className="logBtn">LogOut</button></Link>: <Link to="/login"><button className="logBtn">LogIn</button></Link>}</li>
+                        </ul>
                         
-                        {user?.email ? <Link to="/login"><button onClick={signOutProcess} className="logBtn">LogOut</button></Link>: <Link to="/login"><button className="logBtn">LogIn</button></Link>}
-                    </div>
-                </nav>
+                    </div>}
+                </div>
             </Container>
+
         </div>
     );
 };

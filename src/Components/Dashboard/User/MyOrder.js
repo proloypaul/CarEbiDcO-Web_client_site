@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import useAuth from '../../../Context/useAuth';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -8,7 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Container } from '@mui/material';
+import { Container} from '@mui/material';
 import './MyOrder.css';
 
 
@@ -83,6 +84,7 @@ const MyOrder = () => {
                             <StyledTableCell align="right">Order</StyledTableCell>
                             <StyledTableCell align="right">Phone</StyledTableCell>
                             <StyledTableCell align="right">Date</StyledTableCell>
+                            <StyledTableCell align="right">Payment</StyledTableCell>
                             <StyledTableCell align="right">Delete</StyledTableCell>
                         </TableRow>
                         </TableHead>
@@ -96,6 +98,7 @@ const MyOrder = () => {
                             <StyledTableCell align="right">{row.OrderItem}</StyledTableCell>
                             <StyledTableCell align="right">{row.phone}</StyledTableCell>
                             <StyledTableCell align="right">{row.date}</StyledTableCell>
+                            <StyledTableCell align="right"><Link to={`/pay/${row._id}`}><button>Pay</button></Link></StyledTableCell>
                             <StyledTableCell align="right"><button onClick={() => handleDltBtn(row._id)} className="dltBtn"><i className="fas fa-trash-alt"></i></button></StyledTableCell>
                             </StyledTableRow>
                         ))}

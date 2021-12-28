@@ -61,9 +61,12 @@ function App() {
         <Route path="/review">
           <Review></Review>
         </Route>
-        <Route path="/pay">
+        <Route path="/pay/:paymentId">
           <Pay></Pay>
         </Route>
+        {/* <Route path="/pay">
+          <Pay></Pay>
+        </Route> */}
         <Route path="/makeAdmin">
           <MakeAdmin></MakeAdmin>
         </Route>
